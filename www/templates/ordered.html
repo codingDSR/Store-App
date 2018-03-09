@@ -1,0 +1,30 @@
+<ion-view view-title="Your orders">
+  <ion-content>
+  	<div ng-include="'templates/loading.html'"></div>
+		<div class="list card" ng-repeat="product in products">
+			
+			<div class="item item-divider item-positive">
+				Ordered Successfully
+			</div>
+
+			<a class="item item-thumbnail-left" href="#/app/product/{{product.id}}">
+			  <img src="{{product.img1}}">
+			  <h2>{{product.name}}</h2>
+			  <p>&#8377;{{product.price}}</p>
+			  <p>{{product.desc.split("\n")[1]}}</p>
+			</a>
+
+			<a class="item dark text-center" ng-click="">
+				Track Package
+			</a>
+			
+		</div>
+
+  </ion-content>
+  <div class="fixed-bottom" ng-if="products.length > 0">
+    <div style="display:none;"></div>
+  	<div style="width:100%" ng-click="home()">
+  		CONTINUE SHOPPING
+  	</div>		
+  </div>
+</ion-view>

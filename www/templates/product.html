@@ -1,0 +1,50 @@
+<ion-view view-title="Products">
+  <ion-content>
+    <div ng-include="'templates/loading.html'"></div>
+    <div ng-if="loading == false">
+      <ion-slide-box on-slide-changed="slideHasChanged($index)">
+        <ion-slide ng-repeat="img in product.imgs">
+          <div class="box blue">
+          <img class="full-image" width="100%" style="width:100vw;height:320px;object-fit:contain;" src="{{img}}">
+          </div>
+        </ion-slide>
+      </ion-slide-box>
+      
+      <div class="product-info text-center">
+        <div class="row">
+          <div class="col"><h4 style="font-size:18px;">{{product.name}}</h4></div>
+        </div>
+        <div class="row">
+          <div class="col"><h3>&#8377;{{product.price}}</h3></div>
+        </div>
+      </div>
+
+      <div class="product-desc">
+        <div class="head"><b>Description</b></div>
+        <ul>
+          <li ng-repeat="char in product.desc.split('\n')" ng-if="char.length > 3">
+            <span class="dot"></span> &nbsp;{{char}}
+          </li>
+        </ul>
+      </div>
+
+      <div class="related-products" ng-if="related_products.length > 0" style="padding-left: 0px;padding-right: 0px;">
+        <div class="head"><b>Related Products</b></div>
+        <div class="list">
+            <a class="item item-thumbnail-left" href="#/app/product/{{product.id}}" ng-repeat="product in related_products">
+              <img src="{{product.img1}}">
+              <h2>{{product.name}}</h2>
+              <p>&#8377;{{product.price}}</p>
+              <p>{{product.desc.split("\n")[1]}}</p>
+            </a>
+        </div>
+
+      </div>
+    </div>
+    <div style="height:60px"></div>
+  </ion-content>
+  <div class="fixed-bottom" ng-if="loading == false">
+    <div class="addcart" ng-click="addToCart()">{{cart.status}}</div>
+    <div class="buynow" ng-click="buy()">BUY NOW</div>
+  </div>
+</ion-view>

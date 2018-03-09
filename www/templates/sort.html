@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Sort</h1>
+    <div class="buttons">
+      <button class="button" ng-click="closeSort(0)">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="sort()">
+      <div class="list">
+        <ion-radio ng-model="sortchoice.id" ng-value="choice.id"  ng-repeat="choice in sortchoices">{{choice.name}}</ion-radio>
+      </div>
+
+      <div class="padding-sm">
+        <button class="button button-full button-positive" type="submit">Sort</button>
+      </div>
+      <div class="errors">
+        
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

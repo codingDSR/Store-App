@@ -1,0 +1,44 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Fill Address</h1>
+    <div class="buttons">
+      <button class="button" ng-click="closeAddress()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="submitAddress()">
+      <div class="list">
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Address Line 1</span>
+          <input placeholder="Address Line 1" type="text" ng-model="address.addr1" maxlength="150">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Address Line 2</span>
+          <input placeholder="Address Line 2" type="text" ng-model="address.addr2" maxlength="150">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Landmark</span>
+          <input placeholder="Landmark" type="text" ng-model="address.landmark" maxlength="100">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">City</span>
+          <input placeholder="City" type="text" ng-model="address.city" maxlength="100">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Zipcode</span>
+          <input placeholder="Zipcode" type="text" onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 8))' ng-model="address.zipcode" maxlength="6">
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Contact Number</span>
+          <input placeholder="Contact Number" type="text" onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 8))' ng-model="address.contact" maxlength="10">
+        </label>
+      </div>
+      <div class="padding-sm">
+        <button class="button button-full button-positive" type="submit">Submit</button>
+      </div>
+      <div class="errors">
+        
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

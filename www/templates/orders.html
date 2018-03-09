@@ -1,0 +1,49 @@
+<ion-view view-title="Your orders">
+  <ion-content>
+  	<div ng-include="'templates/loading.html'"></div>
+	<div class="text-center" ng-if="loading == false && products.length < 1">
+		<br>
+		<p><h3>You have nothing ordered yet.</h3></p>
+		<a class="button button-positive" href="#/app/index">Home</a>
+	</div>  	
+	<div class="list card" ng-repeat="product in products">
+		<a class="item item-thumbnail-left" href="#/app/product/{{product.id}}">
+		  <img src="{{product.img1}}">
+		  <h2>{{product.name}}</h2>
+		  <p>&#8377;{{product.price}}</p>
+		  <p>{{product.desc.split("\n")[1]}}</p>
+		</a>
+<!-- 		
+		<div class="item item-divider">
+			Address
+		</div>
+		<div class="item">
+			{{product.addr1}},
+			<br>
+			{{product.addr2}},
+			<span ng-if="product.landmark.length > 2"><br>{{product.landmark}},</span>
+			<br>
+			{{product.city}}- {{product.zipcode}}
+		</div>
+ -->
+ 		<div class="item item-body">
+			<div class="order" ng-class="{'state1':product.status=='0','state2':product.status=='1','state3':product.status=='2','state4':product.status=='3'}">
+			  <div>
+			    <div class="status"></div>
+			    <div class="status"></div>
+			    <div class="status"></div>
+			    <div class="status"></div>
+			  </div>
+			</div>
+ 		</div>
+		<a class="item text-center" ng-click="cancelOrder({{product.id}},'{{product.oid}}')">
+			Cancel order
+		</a>
+	</div>
+  </ion-content>
+  <div class="fixed-bottom" ng-if="totalprice > 0">
+  	<div style="width:100%" >
+  		CONTINUE SHOPPING
+  	</div>		
+  </div>
+</ion-view>

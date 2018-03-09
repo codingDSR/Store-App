@@ -1,0 +1,49 @@
+<ion-view view-title="Order product">
+  <ion-content>
+    <div ng-include="'templates/loading.html'"></div>
+    <span ng-if="loading == false">
+      <div class="padding" style="margin-top:10px;" ng-if="products.length > 0">
+        <button style="border-radius: 0px;" class="button-block button button-positive" ng-click="fillAddress()">
+          <span ng-if="address.addr1.length > 4 && address.city.length > 2">
+            Change Address
+          </span>
+          <span ng-if="address.addr1.length < 4 && address.city.length < 2">
+            Fill Address
+          </span>
+        </button>
+        <div class="address" ng-if="address.addr1.length > 4 && address.city.length > 2">
+          <p>Address Line 1: {{address.addr1}}</p>
+          <p>Address Line 2: {{address.addr2}}</p>
+          <p ng-if="address.landmark.length > 3">Landmark: {{address.landmark}}</p>
+          <p>City: {{address.city}}</p>
+          <p>Zipcode: {{address.zipcode}}</p>
+          <hr>
+        </div>
+      </div>
+      <div class="text-center" ng-if="products.length < 1">
+        <br><br>
+        <p><h3>Your cart is empty!</h3></p>
+        <a href="#/app/index" class="button button-positive">Continue shopping</a>
+      </div>
+      <div class="list card" ng-repeat="product in products">
+  			<a class="item item-thumbnail-left" href="#/app/product/{{product.id}}">
+  			  <img src="{{product.img1}}">
+  			  <h2>{{product.name}}</h2>
+  			  <p>&#8377;{{product.price}}</p>
+  			  <p>{{product.desc.split("\n")[1]}}</p>
+  			</a>
+  		</div>
+    </span>
+  </ion-content>
+  <div class="fixed-bottom" ng-if="totalprice > 0">
+  	<div class="addcart" style="width:60%">
+  		<div style="font-weight: 500;">
+  			<span>Total:</span>
+  			&#8377;{{totalprice}}
+  		</div>
+  	</div>
+  	<div style="width:40%" ng-click="order()">
+  		ORDER
+  	</div>		
+  </div>
+</ion-view>

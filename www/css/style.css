@@ -1,0 +1,228 @@
+/* Empty. Add your own CSS if you like */
+.padding-sm {
+	padding: 0px 12px;
+}
+.button-full {
+	width: 100%;
+}
+.dropdown-menu  {
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+.dp-menu {
+	margin-top:15px;
+	height: 0px;
+	overflow: hidden;
+	margin-bottom: -10px;
+}
+.dp-menu.active {
+	height: initial;
+}
+.dp-menu > ion-item {
+	border-color: #fff !important;
+	color:#888;
+}
+.dp-menu > ion-item > .item-content{
+	padding: 13px 10px;
+	border:none;
+	outline: none;
+}
+.dropdown-icon {
+	float: right;
+	/*margin-top:-20px;*/
+	margin-right: 15px;
+}
+.dropdown-icon.active {
+	transform:rotate(45deg);
+}
+
+
+.slider-pager {
+	bottom: 0px;
+}
+
+.fixed-bottom {
+	position: fixed;
+	bottom:-7px;
+	left: 0px;
+	right: 0px;
+	height: 55px;
+	line-height: 50px;
+	text-align: center;
+}
+.fixed-bottom > div {
+	width: 50%;
+	font-weight: 600;
+	font-size: 15px;
+}
+.fixed-bottom > div:nth-child(1) {
+	float:left;
+	background: #fdfdfd;
+	box-shadow: inset 0px 2px 3px 2px #ddd;
+}
+.fixed-bottom > div:nth-child(2) {
+	float:right;
+	background: #3399ff;
+	color:#fff;
+}
+.fixed-bottom:after {
+	content:"";
+	display: table-cell;
+	clear:both;
+}
+.product-desc,.related-products {
+	padding:25px 12px;
+	margin:15px 0px;
+	background: #f9f9f9;
+}
+.product-desc div.head ,.related-products div.head {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.product-desc .head b ,.related-products div.head b {
+	font-size: 16px;
+	color:#444;
+	border-bottom: 2px dashed #aaa;
+	padding-bottom: 6px;
+}
+.related-products {
+	background: #fdfdfd;
+}
+.product-desc li {
+	margin-bottom: 6px;
+}
+.dot {
+	width: 9px;
+	height: 9px;
+	background: #888;
+	display: inline-block;
+}
+.text-center {
+	text-align: center;
+}
+.product-info {
+	padding: 5px 10px 15px;
+	margin-bottom: -30px;
+}
+.product-info h3 {
+	margin-top: -10px;
+}
+
+
+
+
+.order {
+  width:100%;
+  position:relative;
+  height:15px;
+  margin-top:5px;
+  margin-bottom: 25px;
+}
+.order > div {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  height: 15px;
+}
+.order > div:after ,.order > div:before {
+	content:"";
+	position: absolute;
+	background: #eee;
+	top:50%;
+	left: 10%;
+	height: 2px;
+	transform:translateY(-50%);
+	width: 80%;
+}
+.order > div:before {
+	width: 0px;
+	z-index: 2;
+	background: #3399ff;
+}
+.order > div > div.status {
+  width:15px;
+  height:15px;
+  background:#bbb;
+  border-radius:50%;
+  position: absolute;
+  left: 50%;
+  transform:translateX(-50%);
+  z-index: 2;
+}
+.order > div > div.status:nth-child(1) {
+	left: 10%;
+}
+.order > div > div.status:nth-child(1):before {
+	content: "Confirmed";
+	position: absolute;
+	top:22px;
+	font-size: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.order > div > div.status:nth-child(2):before {
+	content: "Packed";
+	position: absolute;
+	top:22px;
+	font-size: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.order > div > div.status:nth-child(3):before {
+	content: "Shipped";
+	position: absolute;
+	top:22px;
+	font-size: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.order > div > div.status:nth-child(4):before {
+	content: "Delivered";
+	position: absolute;
+	top:22px;
+	font-size: 12px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.order > div > div.status:nth-child(2) {
+	left: 37%;
+}
+.order > div > div.status:nth-child(3) {
+	left: 63%;
+}
+.order > div > div.status:nth-child(4) {
+	left: 90%;
+}
+
+
+.order.state1 > div > div.status:nth-child(1){
+	background: #3399ff;
+}
+.order.state2 > div:before {
+	width: 27%;
+}
+
+.order.state2 > div > div.status:nth-child(1),
+.order.state2 > div > div.status:nth-child(2)  {
+	background: #3399ff;
+}
+.order.state3 > div:before {
+	width: 53%;
+}
+
+.order.state3 > div > div.status:nth-child(1),
+.order.state3 > div > div.status:nth-child(2),  
+.order.state3 > div > div.status:nth-child(3){
+	background: #3399ff;
+}
+.order.state4 > div:before {
+	width: 80%;
+}
+
+.order.state4 > div > div.status:nth-child(1),
+.order.state4 > div > div.status:nth-child(2),
+.order.state4 > div > div.status:nth-child(3),    
+.order.state4 > div > div.status:nth-child(4){
+	background: #3399ff;
+}

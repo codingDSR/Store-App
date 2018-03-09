@@ -1,0 +1,37 @@
+<ion-view view-title="Cart">
+  <ion-content>
+
+    <div ng-include="'templates/loading.html'"></div>
+    <div ng-if="loading == false">
+      <div class="no-cart" ng-if="totalprice < 1">
+        <br><br>
+        <img style="width:100vw;height:220px;object-fit:contain;" src="https://www.seemora.com/assets/images/empty-cart.png">
+      </div>
+
+  		<div class="list card" ng-repeat="product in products">
+  			<a class="item item-thumbnail-left" href="#/app/product/{{product.id}}">
+  			  <img src="{{product.img1}}">
+  			  <h2>{{product.name}}</h2>
+  			  <p>&#8377;{{product.price}}</p>
+  			  <p>{{product.desc.split("\n")[1]}}</p>
+  			</a>
+
+  			<a class="item dark text-center" ng-click="remove({{product.id}})">
+  				<i class="icon ion-ios-trash"></i> Remove
+  			</a>
+  		</div>
+    </div>
+
+  </ion-content>
+  <div class="fixed-bottom" ng-if="totalprice > 0">
+  	<div class="addcart" style="width:60%">
+  		<div style="font-weight: 500;">
+  			<span>Total:</span>
+  			&#8377;{{totalprice}}
+  		</div>
+  	</div>
+  	<div style="width:40%" ng-click="buy()">
+  		CONTINUE
+  	</div>		
+  </div>
+</ion-view>

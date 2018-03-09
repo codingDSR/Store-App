@@ -1,0 +1,22 @@
+<ion-view view-title="Products">
+  <ion-content>
+    <div ng-include="'templates/loading.html'"></div>
+    <div class="padding text-center" ng-if="products.length == 0 && loading == false">
+      <img src="img/no_product_found.svg" width="250px;">
+    </div>
+    <div class="list">
+	    <a class="item item-thumbnail-left" href="#/app/product/{{product.id}}" ng-repeat="product in products">
+	      <img src="{{product.img1}}">
+	      <h2>{{product.name}}</h2>
+	      <p>&#8377;{{product.price}}</p>
+	      <p>{{product.desc.split("\n")[1]}}</p>
+	    </a>
+    </div>
+  </ion-content>
+  <div class="fixed-bottom" ng-if="products.length > 1">
+  	<div style="display:none;width:0px;"></div>
+  	<div class="buy" ng-click="sortProduct()" style="width:100%;background: #666">
+  		<span style="transform:rotate(270deg);display:inline-block;"><i class="icon ion-arrow-swap"></i></span> Sort
+  	</div>
+  </div>
+</ion-view>
